@@ -1,0 +1,17 @@
+This directory contains a tool to help fix translation in drascula (the original translation to some languages was horrible).
+A lot of the text is in the create_drascula tool in the ScummVM repository (the tool used to create the drascula.dat file that
+is needed when playing the game with ScummVM). But some of the text is in the game data file.
+
+The game data files are actually ARJ archive. So you can unpackage and repackage using the ARJ executable (for example
+'arj a -e PACKET002 PACKET.002/*' to repackage) and renaming manually to add/remove the '.arj' extension.
+
+You will find dialog text in the '*.CAL' files and hotspot names in the '*.ALD' files. You cannot however edit those file
+directly as they are encrypted (using XOR with 0xFF). The xor.c file is a very simple program to decrypt/encrypt those files.
+You pass a file (or multiple files) to the program and it creates a new file with the '.xored' extension added. You can then
+edit those file and reapply the program to reencrypt.
+
+There is also a simple shell script to rename file by removing the '.xored' extension (since after the process of decrypting/
+modifying/encrypting the file will have the extension '.xored.xored' that needs to be removed before repackaging the data archive).
+
+Note on non-ASCII characters: the game is using the code page 850 encoding (see http://en.wikipedia.org/wiki/Code_page_850).
+

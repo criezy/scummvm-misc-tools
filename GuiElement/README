@@ -1,0 +1,14 @@
+A while back I tried writing a ScummVM theme and was frustrated by the process and in particular the
+process of defining the layout. It was getting a lot of errors with without out of screen, or not
+appearing where I wanted them to do. This results in having themes with hardcoded width for some
+widgets (e.g. buttons) as this is basically the only way to get the layout we want.
+
+I also worked on translating  ScummVM, and there having hardcoded width was an issue since those
+had been worked out from the English version of the GUI and it was sometimes difficult to fit
+a translated text into the same width (which is particularly frustrating when there is more space
+available).
+
+So I started looking at the idea of implementing a more dynamic layout engine. The code you will
+find here is an early draft of that thought process. I noever compiled it, let alone test it. This
+is C++ code simply because it helped me organized my thoughts. But there is a lot missing to get to
+something functional.

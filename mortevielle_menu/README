@@ -1,0 +1,4 @@
+This directory contains the C code for two simple programs to decode and encode the menu files for the Mortville Manor
+game (MENUAL.MOR and MENUFR.MOR). The decoded version will look like ASCII art. This can be used to change the menu and
+was for example used to generate the english version of the menu for our english translation of the game and generate an
+improved German menu.
